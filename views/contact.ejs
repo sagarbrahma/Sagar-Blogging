@@ -1,0 +1,71 @@
+<style>
+    .in-left input[type="text"],
+    .in-right textarea {
+        color: #000000 !important
+    }
+</style>
+<%- include("partial/header.ejs") %>
+    <%- include("partial/header-top.ejs") %>
+
+
+        <div class="banner-body cntct">
+            <div class="container">
+                <!-- contact -->
+                <div class="contact">
+                    <div class="contact-left">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.395599609533!2d88.3895256144015!3d22.898775026691027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f893ca553a9791%3A0x65586a6b6798183d!2sBRAHMA%20BHANDAR!5e0!3m2!1sen!2sin!4v1668440439298!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </iframe>
+                       
+                    </div>
+                    <div class="contact-right">
+                        <p class="phn">+91 7003116540</p>
+                        <p class="phn-bottom"> Goaltuli lane, 
+                            <span> Chinsurah, Hooghly, West Bengal 712103</span></p>
+                        <p class="lom"></p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="contact-left1">
+                        <h3>Contact Us With <span>Any Queston</span></h3>
+                        <% if(message.length > 0) {%>
+                            <div class="<%- alert %>">
+                                <%- message %>
+                            </div>
+                            <% } %>
+                                <div class="in-left">
+                                    <form action="/add-contact" method="post">
+                                        <input type="text" name="name" placeholder="Your Name:" required>
+                                        <input type="text" name="contact" placeholder="Phone Number:" required>
+                                        <input type="text" name="email" placeholder="E-mail:" required>
+
+                                </div>
+                                <div class="in-right">
+
+                                    <textarea placeholder="Message:" name="message"></textarea>
+                                    <input type="submit" value="Submit">
+                                    </form>
+                                </div>
+                                <div class="clearfix"> </div>
+                    </div>
+                    <div class="contact-right1">
+                        <h3>Find Us On <span>Social Websites</span></h3>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere veniam minus, quasi tempore velit culpa eaque tempora dolorum iusto sint nesciunt necessitatibus tenetur fuga, nobis consequatur animi nam, voluptates in.</p>
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/sagar.brahma.5686/" class="g1"> </a>
+                            </li>
+                           
+                            <li>
+                                <a href="https://www.linkedin.com/in/sagar-brahma-52198b24b/" class="twitter1"> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- //contact -->
+            </div>
+        </div>
+
+
+
+        <%- include("partial/footer.ejs") %>

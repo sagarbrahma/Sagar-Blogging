@@ -1,0 +1,46 @@
+<%- include("partial/header.ejs") %>
+<%- include("partial/header-top.ejs") %><style>
+    tr>th {
+        text-align: center;
+    }
+</style>
+
+        <div class="about">
+            <div class="about-text">
+                <h3>My Posts</h3>
+            </div>
+            <div class="about-info">
+                <h3>Manage Posts</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            
+                            <th scope="col">Post Title</th>
+                            <th scope="col">Post Subtitle</th>
+                            <th scope="col">Post Body</th>
+                            <th scope="col" colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% allBlog.map(data=>{   if(data.user.email === flag && data.status){ %> 
+                            <tr>
+                                
+                                <td>
+                                    <%= data.title %>
+                                </td>
+                                <td>
+                                    <%= data.subtitle %>
+                                </td>
+                                <td>
+                                    <%- data.content.slice(0,999)+" ........" %>
+                                </td>
+                                
+                                <td><a href="/edit/<%= data._id %>" class="btn btn-success">Update</a></td>
+                                <td><a href="/delete/<%= data._id %>" class="btn btn-danger">Delete</a></td>
+                            </tr>
+                            <% } }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%- include("partial/footer.ejs") %>
